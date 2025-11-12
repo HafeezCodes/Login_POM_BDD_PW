@@ -1,0 +1,32 @@
+{
+  "name": "playwright-convo-login",
+  "version": "1.0.0",
+  "description": "Playwright Cucumber BDD Login Test Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --config config/cucumber.js",
+    "test:login": "cucumber-js features/login.feature --config config/cucumber.js",
+    "test:headed": "cross-env HEADLESS=false cucumber-js --config config/cucumber.js",
+    "test:smoke": "cucumber-js --tags @smoke --config config/cucumber.js",
+    "test:regression": "cucumber-js --tags @regression --config config/cucumber.js",
+    "test:report": "cucumber-js --format html:reports/cucumber-report.html --config config/cucumber.js",
+    "test:clean": "npm run clean && cucumber-js --config config/cucumber.js",
+    "clean": "rimraf reports"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "bdd",
+    "automation",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.0",
+    "@playwright/test": "^1.40.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.2.3",
+    "rimraf": "^6.1.0"
+  }
+}
